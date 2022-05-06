@@ -21,7 +21,7 @@ public class DriverController {
     private RestTemplate restTemplate;
 
     @GetMapping("")
-    public ResponseEntity<List<Driver>> getAll(@RegisteredOAuth2AuthorizedClient("users-client-oidc") OAuth2AuthorizedClient authorizedClient) {
+    public ResponseEntity<List<Driver>> getAll(@RegisteredOAuth2AuthorizedClient("drivers-client") OAuth2AuthorizedClient authorizedClient) {
         // use @AuthenticationPrincipal Jwt jwt as a method parameter here or in the resource server
         String jwtAccessToken = authorizedClient.getAccessToken().getTokenValue();
         String url = "http://127.0.0.1:8082/api/drivers";  // endpoint of the Resource server to get the resource

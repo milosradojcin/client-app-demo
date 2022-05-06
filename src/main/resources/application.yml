@@ -8,13 +8,13 @@ spring:
     oauth2:
       client:
         registration:
-          users-client-oidc:
-            client-id: client-id
-            client-secret: client-secret
+          drivers-client:
+            client-id: drivers-id
+            client-secret: drivers-secret
             authorization-grant-type: authorization_code
-            redirect-uri: http://127.0.0.1:8083/login/oauth2/code/users-client-oidc
+            redirect-uri: http://127.0.0.1:8083/login/oauth2/code/drivers-client
             scope:
               - openid
         provider:
-          users-client-oidc:
+          drivers-client:
             issuer-uri: http://auth-server:8081
